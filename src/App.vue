@@ -53,12 +53,12 @@ export default {
     }
   },
   created() {
-    console.log(this.dialogToastContain);
+
   },
   watch: {
     // 监听dialog-Toast内容变化
     dialogToastContain: function() {
-      console.log("tag", "");
+      
       this.showToast();
     }
   }
