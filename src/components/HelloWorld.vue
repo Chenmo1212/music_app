@@ -2,19 +2,30 @@
   <div class="hello">
     <div class="box text-xx shadow padding-lg margin-lr-sm">12</div>
     <div class="bg-green round cu-btn">123s</div>
-    <div class="cu-card-sm text-center">
+    <div class="cu-card-sm text-center" @click="setDat">
       asda
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+     
     };
+  },
+  methods:{
+    ...mapActions([
+      'setDialogToastContain'
+    ]),
+
+    setDat(){
+      this.setDialogToastContain('哈哈哈哈');
+    }
+    
   }
 };
 </script>
