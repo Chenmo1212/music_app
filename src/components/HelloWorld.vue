@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
-    <div class="box text-xx shadow padding-lg margin-lr-sm">12</div>
+    <div class="box shadow padding-lg">12</div>
     <div class="bg-green round cu-btn">123s</div>
     <div class="cu-card-sm text-center" @click="setDat">
       我是toast
     </div>
+    <div class="cu-btn" @click="setData">123</div>
   </div>
 </template>
 
@@ -24,8 +25,10 @@ export default {
 
     setDat(){
       this.setDialogToastContain('哈哈哈哈');
-    }
-    
+    },
+    setData() {
+      this.setDialogToastContain("登陆成功");
+    },
   }
 };
 </script>
@@ -35,7 +38,4 @@ export default {
 // 引入scss
 @import "../scss/common.scss";
 
-.test {
-  margin: 2rem;
-}
 </style>

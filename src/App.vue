@@ -3,7 +3,6 @@
     <div class="toastBox">
       <div class="toast a-fadeInUp" v-show="toastShow" id="toast">{{toastText}}</div>
     </div>
-    <div class="cu-btn" @click="setData">123</div>
     <router-view />
   </div>
 </template>
@@ -19,18 +18,15 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      'dialogToastContain'
-    ])
+    ...mapState(["dialogToastContain"])
   },
   methods: {
     ...mapActions(["setDialogToastContain"]),
 
-    setData() {
-      this.setDialogToastContain("登陆成功");
-    },
     // toast
     showToast() {
+      console.log(this.toastShow, '')
+      if(this.toastShow) return;
       if (this.dialogToastContain !== "") {
         document.getElementById("toast").className = "toast a-fadeInUp";
         let v = this;
@@ -45,20 +41,17 @@ export default {
           clearTimeout(timeId2);
           let timeId2 = setTimeout(function() {
             v.toastShow = false;
+            v.setDialogToastContain("");
           }, 200);
         }, 1500);
 
-        this.setDialogToastContain("");
       }
     }
   },
-  created() {
-
-  },
+  created() {},
   watch: {
     // 监听dialog-Toast内容变化
     dialogToastContain: function() {
-      
       this.showToast();
     }
   }
@@ -101,7 +94,8 @@ html {
   align-items: center;
   bottom: 15%;
   // background-color: #eeeeee;
-  width: 100vw;
+  width: 100%;
+  max-width: 450px;
   z-index: 20;
 }
 .toast {
