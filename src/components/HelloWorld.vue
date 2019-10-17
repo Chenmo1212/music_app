@@ -3,7 +3,7 @@
     <div class="box text-xx shadow padding-lg margin-lr-sm">12</div>
     <div class="bg-green round cu-btn">123s</div>
     <div class="cu-card-sm text-center" @click="setDat">
-      asda
+      我是toast
     </div>
   </div>
 </template>
