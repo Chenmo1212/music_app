@@ -1,0 +1,567 @@
+/* ==================
+          文本
+ ==================== */
+
+.text-red {
+    color: #fe5a5b !important;
+}
+
+.text-green {
+    color: #5de4c3 !important;
+}
+
+.text-blue {
+    color: #44afe7 !important;
+}
+
+.text-grey {
+    color: #999999 !important;
+}
+
+.text-black {
+    color: #091314 !important;
+}
+
+.text-greyLight {
+    color: #e7ebed !important;
+}
+
+
+/* 注释类 */
+
+.text-sm {
+    font-size: 0.7rem !important;
+}
+
+
+/* 正文类 */
+
+.text-df {
+    font-size: 0.8rem !important;
+}
+
+
+/* 小标题 */
+
+.text-lg {
+    font-size: 1rem !important;
+}
+
+
+/* 大标题 */
+
+.text-xl {
+    font-size: 1.8rem !important;
+}
+
+
+/* 大大标题 */
+
+.text-xxl {
+    font-size: 2.2rem !important;
+}
+
+
+/* 人民币 */
+
+.text-price::before {
+    content: "¥";
+    font-size: 80%;
+    margin-right: 4rpx;
+}
+
+
+/* 超出一行省略 */
+
+.text-cut {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+
+/* 对齐方式 */
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+
+/* 段落文字行间距1.6 */
+
+.text-content {
+    line-height: 1.6 !important;
+}
+
+
+/* 段落文字行间距1.6 */
+
+.bg-content {
+    line-height: 1.6;
+}
+
+
+/* ==================
+        内外边距
+ ==================== */
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-xs {
+    margin: 0.5rem;
+}
+
+.margin-sm {
+    margin: 1rem;
+}
+
+.margin {
+    margin: 1.5rem;
+}
+
+.margin-lg {
+    margin: 2rem;
+}
+
+.margin-xl {
+    margin: 2.5rem;
+}
+
+.margin-top-xs {
+    margin-top: 0.5rem;
+}
+
+.margin-top-sm {
+    margin-top: 1rem;
+}
+
+.margin-top {
+    margin-top: 1.5rem;
+}
+
+.margin-top-lg {
+    margin-top: 2rem;
+}
+
+.margin-top-xl {
+    margin-top: 2.5rem;
+}
+
+.margin-right-xs {
+    margin-right: 0.5rem;
+}
+
+.margin-right-sm {
+    margin-right: 1rem;
+}
+
+.margin-right {
+    margin-right: 1.5rem;
+}
+
+.margin-right-lg {
+    margin-right: 2rem;
+}
+
+.margin-right-xl {
+    margin-right: 2.5rem;
+}
+
+.margin-bottom-xs {
+    margin-bottom: 0.5rem;
+}
+
+.margin-bottom-sm {
+    margin-bottom: 1rem;
+}
+
+.margin-bottom {
+    margin-bottom: 1.5rem;
+}
+
+.margin-bottom-lg {
+    margin-bottom: 2rem;
+}
+
+.margin-bottom-xl {
+    margin-bottom: 2.5rem;
+}
+
+.margin-left-xs {
+    margin-left: 0.5rem;
+}
+
+.margin-left-sm {
+    margin-left: 1rem;
+}
+
+.margin-left {
+    margin-left: 1.5rem;
+}
+
+.margin-left-lg {
+    margin-left: 2rem;
+}
+
+.margin-left-xl {
+    margin-left: 2.5rem;
+}
+
+.margin-lr-xs {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.margin-lr-sm {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.margin-lr {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.margin-lr-lg {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.margin-lr-xl {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.margin-tb-xs {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.margin-tb-sm {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.margin-tb {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.margin-tb-lg {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.margin-tb-xl {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.padding-xs {
+    padding: 0.5rem;
+}
+
+.padding-sm {
+    padding: 1rem;
+}
+
+.padding {
+    padding: 1.5rem;
+}
+
+.padding-lg {
+    padding: 2rem;
+}
+
+.padding-xl {
+    padding: 2.5rem;
+}
+
+.padding-top-xs {
+    padding-top: 0.5rem;
+}
+
+.padding-top-sm {
+    padding-top: 1rem;
+}
+
+.padding-top {
+    padding-top: 1.5rem;
+}
+
+.padding-top-lg {
+    padding-top: 2rem;
+}
+
+.padding-top-xl {
+    padding-top: 2.5rem;
+}
+
+.padding-right-xs {
+    padding-right: 0.5rem;
+}
+
+.padding-right-sm {
+    padding-right: 1rem;
+}
+
+.padding-right {
+    padding-right: 1.5rem;
+}
+
+.padding-right-lg {
+    padding-right: 2rem;
+}
+
+.padding-right-xl {
+    padding-right: 2.5rem;
+}
+
+.padding-bottom-xs {
+    padding-bottom: 0.5rem;
+}
+
+.padding-bottom-sm {
+    padding-bottom: 1rem;
+}
+
+.padding-bottom {
+    padding-bottom: 1.5rem;
+}
+
+.padding-bottom-lg {
+    padding-bottom: 2rem;
+}
+
+.padding-bottom-xl {
+    padding-bottom: 2.5rem;
+}
+
+.padding-left-xs {
+    padding-left: 0.5rem;
+}
+
+.padding-left-sm {
+    padding-left: 1rem;
+}
+
+.padding-left {
+    padding-left: 1.5rem;
+}
+
+.padding-left-lg {
+    padding-left: 2rem;
+}
+
+.padding-left-xl {
+    padding-left: 2.5rem;
+}
+
+.padding-lr-xs {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.padding-lr-sm {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.padding-lr {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.padding-lr-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.padding-lr-xl {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.padding-tb-xs {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.padding-tb-sm {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.padding-tb {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.padding-tb-lg {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.padding-tb-xl {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+
+/* ==================
+        浮动
+ ==================== */
+
+.cf::after,
+.cf::before {
+    content: " ";
+    display: table;
+}
+
+.cf::after {
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+/* ==================
+        背景
+ ==================== */
+
+.bg-red {
+    background-color: #fe5a5b;
+    color: #fff;
+}
+
+.bg-green {
+    background-color: #5de4c3;
+    color: #fff;
+}
+
+.bg-blue {
+    background-color: #44afe7;
+    color: #fff;
+}
+
+.bg-grey {
+    background-color: #999999;
+    color: #091314;
+}
+
+.bg-black {
+    background-color: #091314;
+    color: #fff;
+}
+
+.bg-greyLight {
+    background-color: #e7ebed;
+    color: #091314;
+}
+
+
+/* ==================
+        阴影
+ ==================== */
+
+.shadow {
+    -moz-box-shadow: 0 2px 5px #eee;
+    -webkit-box-shadow: 0 2px 5px #eee;
+    box-shadow: 0 2px 5px #eee;
+}
+
+
+/* ==================
+        按钮
+ ==================== */
+
+.cu-btn {
+    padding: 0.4rem 1.5rem;
+    display: block;
+    margin: 1rem 2rem;
+    font-size: 0.8rem;
+    -moz-box-shadow: 2px 2px 2px #eee;
+    -webkit-box-shadow: 2px 2px 2px #eee;
+    box-shadow: 2px 2px 2px #eee;
+    cursor: pointer;
+}
+
+.cu-btn:hover {
+    background-color: #4fdab7;
+}
+
+.cu-btn:active {
+    background-color: #48c5a6;
+}
+
+
+/* ==================
+        圆角
+ ==================== */
+
+.round {
+    border-radius: 5px;
+}
+
+
+/* ==================
+        卡片
+ ==================== */
+
+.cu-card-lg {
+    padding: 0.4rem 0.5rem;
+    display: inline-block;
+    width: 90%;
+    min-height: 2rem;
+    font-size: 0.8rem;
+    -moz-box-shadow: 0 2px 2px #eee;
+    -webkit-box-shadow: 0 2px 2px #eee;
+    box-shadow: 0 2px 2px #eee;
+    text-align: left;
+}
+
+.cu-card {
+    padding: 0.4rem 0.5rem;
+    display: inline-block;
+    width: 45%;
+    font-size: 0.8rem;
+    -moz-box-shadow: 0 2px 2px #eee;
+    -webkit-box-shadow: 0 2px 2px #eee;
+    box-shadow: 0 2px 2px #eee;
+    text-align: left;
+}
+
+.cu-card-sm {
+    padding: 0.4rem 0.5rem;
+    display: inline-block;
+    width: 30%;
+    font-size: 0.8rem;
+    -moz-box-shadow: 0 2px 2px #eee;
+    -webkit-box-shadow: 0 2px 2px #eee;
+    box-shadow: 0 2px 2px #eee;
+    text-align: left;
+}
