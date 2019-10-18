@@ -1,8 +1,19 @@
 <template>
   <div id="app">
-    <div class="toastBox">
-      <div class="toast a-fadeInUp" v-show="toastShow" id="toast">{{toastText}}</div>
+    <!-- toast -->
+    <div class="toastBox block text-white">
+      <div class="toast inline-block a-fadeInUp" v-show="toastShow" id="toast">{{toastText}}</div>
     </div>
+    <!-- header -->
+    <!-- <div class="header h-lg bg-white shadow text-sm">
+      <div class="navBar text-gray cf h-10">
+        <div class="fl h-10 menu1 checked">我的音乐</div>
+        <div class="fl h-10 menu2">歌单广场</div>
+        <div class="fl h-10 icon">搜索</div>
+        <div class="fl h-10 avatar">头像</div>
+      </div>
+    </div>-->
+    <!-- 路由页面 -->
     <router-view />
   </div>
 </template>
@@ -25,8 +36,8 @@ export default {
 
     // toast
     showToast() {
-      console.log(this.toastShow, '')
-      if(this.toastShow) return;
+      // console.log(this.toastShow, '')
+      if (this.toastShow) return;
       if (this.dialogToastContain !== "") {
         document.getElementById("toast").className = "toast a-fadeInUp";
         let v = this;
@@ -44,7 +55,6 @@ export default {
             v.setDialogToastContain("");
           }, 200);
         }, 1500);
-
       }
     }
   },
@@ -62,7 +72,7 @@ export default {
 // 引入外部样式
 @import "./css/normalize.css";
 @import "./css/common.css";
-@import 'mint-ui/lib/style.css';
+@import "mint-ui/lib/style.css";
 // 主题色
 $red: #fe5a5b;
 $green: #5de4c3;
@@ -87,8 +97,6 @@ html {
 }
 
 .toastBox {
-  display: block;
-  text-align: center;
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -97,82 +105,29 @@ html {
   width: 100%;
   max-width: 450px;
   z-index: 20;
-}
-.toast {
-  display: inline-block;
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 5px;
-  color: #fff;
-  background: rgba(17, 17, 17, 0.7);
-  padding: 0.5rem 1rem;
-  max-width: 8rem;
-  font-size: 0.8rem;
-}
-
-.a-fadeInUp {
-  -webkit-animation: 0.5s ease-out backwards;
-  -moz-animation: 0.5s ease-out backwards;
-  -ms-animation: 0.5s ease-out backwards;
-  animation: 0.5s ease-out backwards;
-  -webkit-animation-name: fadeInUp;
-  -moz-animation-name: fadeInUp;
-  -ms-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 10%, 0);
-    transform: translate3d(0, 10%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+  .toast {
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 5px;
+    background: rgba(17, 17, 17, 0.7);
+    padding: 0.5rem 1rem;
+    max-width: 8rem;
+    font-size: 0.8rem;
   }
 }
 
-@-webkit-keyframes fadeOut {
-  0% {
-    transform: scale(1);
-    opacity: 1;
+.navBar {
+  line-height: 3rem;
+  font-size: .7rem;
+  .menu1,
+  .menu2,
+  .icon {
+    width: 25%;
   }
-  100% {
-    opacity: 0;
-    transform: scale(1.05);
+  .checked {
+    font-size: 0.8rem;
+    color: $black;
+    font-weight: 700;
   }
-}
-
-@keyframes fadeOut {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-}
-
-.fadeOut {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
-}
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
-.a-fadeOut {
-  -webkit-animation: 0.3s ease-out backwards;
-  -moz-animation: 0.3s ease-out backwards;
-  -ms-animation: 0.3s ease-out backwards;
-  animation: 0.3s ease-out backwards;
-  -webkit-animation-name: fadeOut;
-  -moz-animation-name: fadeOut;
-  -ms-animation-name: fadeOut;
-  animation-name: fadeOut;
 }
 </style>

@@ -1,9 +1,42 @@
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+
 /* ==================
           文本
  ==================== */
 
 .text-red {
     color: #fe5a5b !important;
+}
+
+.text-white {
+    color: #fff !important;
 }
 
 .text-green {
@@ -14,7 +47,7 @@
     color: #44afe7 !important;
 }
 
-.text-grey {
+.text-gray {
     color: #999999 !important;
 }
 
@@ -22,7 +55,7 @@
     color: #091314 !important;
 }
 
-.text-greyLight {
+.text-grayLight {
     color: #e7ebed !important;
 }
 
@@ -599,6 +632,11 @@
     color: #fff;
 }
 
+.bg-white {
+    background-color: #fff;
+    color: #5de4c3;
+}
+
 .bg-green {
     background-color: #5de4c3;
     color: #fff;
@@ -609,7 +647,7 @@
     color: #fff;
 }
 
-.bg-grey {
+.bg-gray {
     background-color: #999999;
     color: #091314;
 }
@@ -619,7 +657,7 @@
     color: #fff;
 }
 
-.bg-greyLight {
+.bg-grayLight {
     background-color: #e7ebed;
     color: #091314;
 }
@@ -630,9 +668,9 @@
  ==================== */
 
 .shadow {
-    -moz-box-shadow: 0 2px 5px #eee;
-    -webkit-box-shadow: 0 2px 5px #eee;
-    box-shadow: 0 2px 5px #eee;
+    -moz-box-shadow: 0 3px 5px #eee;
+    -webkit-box-shadow: 0 3px 5px #eee;
+    box-shadow: 0 3px 5px #eee;
 }
 
 
@@ -726,33 +764,69 @@
         动画
  ==================== */
 
-.fadeInUp {
+.a-fadeInUp {
+    -webkit-animation: 0.5s ease-out backwards;
+    -moz-animation: 0.5s ease-out backwards;
+    -ms-animation: 0.5s ease-out backwards;
+    animation: 0.5s ease-out backwards;
     -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp
-}
-
-@-webkit-keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 10%, 0);
-        transform: translate3d(0, 10%, 0)
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none
-    }
+    -moz-animation-name: fadeInUp;
+    -ms-animation-name: fadeInUp;
+    animation-name: fadeInUp;
 }
 
 @keyframes fadeInUp {
     0% {
         opacity: 0;
         -webkit-transform: translate3d(0, 10%, 0);
-        transform: translate3d(0, 10%, 0)
+        transform: translate3d(0, 10%, 0);
     }
     100% {
         opacity: 1;
         -webkit-transform: none;
-        transform: none
+        transform: none;
     }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.a-fadeOut {
+    -webkit-animation: 0.3s ease-out backwards;
+    -moz-animation: 0.3s ease-out backwards;
+    -ms-animation: 0.3s ease-out backwards;
+    animation: 0.3s ease-out backwards;
+    -webkit-animation-name: fadeOut;
+    -moz-animation-name: fadeOut;
+    -ms-animation-name: fadeOut;
+    animation-name: fadeOut;
 }

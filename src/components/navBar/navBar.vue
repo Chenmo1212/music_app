@@ -1,16 +1,21 @@
 <template>
   <div>
     <!-- vue2.0 的限制，对于自定义组件的绑定事件需要加上 .native 修饰符-->
-    <div class="nav cf h-df">
-      <!-- <mt-button size="small" @click.native.prevent="active = 'tab-container1'">tab 1</mt-button>
-      <mt-button size="small" @click.native.prevent="active = 'tab-container2'">tab 2</mt-button>
-      <mt-button size="small" @click.native.prevent="active = 'tab-container3'">tab 3</mt-button>-->
-
-      <div class="local text-black text-df fl w-3" @click="active = 'tab-container1'">我的音乐</div>
-      <div class="local text-black text-df fl w-3" @click="active = 'tab-container2'">菜单广场</div>
-      <div class="local text-black text-df fl w-1" @click="active = 'tab-container3'">搜索</div>
+    <div class="navBar text-gray cf h-lg shadow" v-if="this.$route.name === 'home'">
+      <div
+        :class="active === 'tab-container1' ? 'fl h-10 menu1 checked' : 'fl h-10 menu1 '"
+        @click="active = 'tab-container1'"
+      >我的音乐</div>
+      <div
+        :class="active === 'tab-container2' ? 'fl h-10 menu2 checked' : 'fl h-10 menu2 '"
+        @click="active = 'tab-container2'"
+      >歌单广场</div>
+      <div
+        :class="active === 'tab-container3' ? 'fl h-10 icon checked' : 'fl h-10 icon '"
+        @click="active = 'tab-container3'"
+      >搜索</div>
+      <div class="fl h-10 avatar">头像</div>
     </div>
-
     <div class="page-tab-container">
       <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
         <mt-tab-container-item id="tab-container1" class="bg-green padding-tb-xl">
@@ -51,5 +56,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.navBar {
+  overflow: hidden;
+}
 </style>
