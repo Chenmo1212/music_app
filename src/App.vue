@@ -62,7 +62,7 @@ export default {
 // 引入外部样式
 @import "./css/normalize.css";
 @import "./css/common.css";
-
+@import 'mint-ui/lib/style.css';
 // 主题色
 $red: #fe5a5b;
 $green: #5de4c3;
