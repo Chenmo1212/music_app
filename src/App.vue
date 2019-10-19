@@ -5,14 +5,20 @@
       <div class="toast inline-block a-fadeInUp" v-show="toastShow" id="toast">{{toastText}}</div>
     </div>
     <!-- header -->
-    <!-- <div class="header h-lg bg-white shadow text-sm">
-      <div class="navBar text-gray cf h-10">
-        <div class="fl h-10 menu1 checked">我的音乐</div>
-        <div class="fl h-10 menu2">歌单广场</div>
-        <div class="fl h-10 icon">搜索</div>
-        <div class="fl h-10 avatar">头像</div>
+    <div
+      class="header h-lg shadow text-sm"
+      :class=" bgColorGreen ? 'bg-green': 'bg-white'"
+      v-if="headerShow"
+    >
+      <div class="navBar cf h-10">
+        <div class="left h-lg fl w-2">返回</div>
+        <div
+          class="main h-lg fl w-6 text-lg"
+          :class=" bgColorGreen ? 'text-white': 'text-black'"
+        >{{headerTitle}}</div>
+        <div class="right h-lg fl w-2">菜单</div>
       </div>
-    </div>-->
+    </div>
     <!-- 路由页面 -->
     <router-view />
   </div>
@@ -25,7 +31,10 @@ export default {
   data() {
     return {
       toastShow: false,
-      toastText: ""
+      toastText: "",
+      headerShow: false,
+      headerTitle: "我是标题",
+      bgColorGreen: false
     };
   },
   computed: {
@@ -56,13 +65,44 @@ export default {
           }, 200);
         }, 1500);
       }
+    },
+    // 是否显示header
+    showHeader(name) {
+      switch (name) {
+        case "home":
+        case "login":
+        case "register":
+        case "search":
+          this.headerShow = false;
+          break;
+        case "ranklist":
+        case "player":
+          this.headerShow = true;
+          break;
+        case "recommend":
+          this.headerShow = true;
+          this.headerTitle = "推荐";
+          this.bgColorGreen = true;
+          break;
+        case "songlist":
+          this.headerShow = true;
+          this.bgColorGreen = true;
+          break;
+      }
+      console.log(this.headerShow);
     }
   },
-  created() {},
+  created() {
+    // 是否显示header
+    this.showHeader(this.$route.name);
+  },
   watch: {
     // 监听dialog-Toast内容变化
     dialogToastContain: function() {
       this.showToast();
+    },
+    $route(to, from) {
+      this.showHeader(to.name);
     }
   }
 };
@@ -82,18 +122,17 @@ $black: #091314;
 
 html {
   font-size: 20px; // 1rem = 20px;
-}
-
-#app {
-  max-width: 450px;
-  margin: 0 auto;
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background-color: #fff;
-  color: #2c3e50;
-  min-height: 100vh;
+  #app {
+    max-width: 450px;
+    margin: 0 auto;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background-color: #fff;
+    color: #2c3e50;
+    min-height: 100vh;
+  }
 }
 
 .toastBox {
@@ -118,7 +157,7 @@ html {
 
 .navBar {
   line-height: 3rem;
-  font-size: .7rem;
+  font-size: 0.7rem;
   .menu1,
   .menu2,
   .icon {

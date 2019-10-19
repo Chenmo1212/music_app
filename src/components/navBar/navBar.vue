@@ -15,7 +15,7 @@
         @click="active = 'tab-container3'"
       >搜索</div>
       <div class="fl h-10 avatar">头像</div>
-    </div> 
+    </div>
     <div class="page-tab-container">
       <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
         <mt-tab-container-item id="tab-container1" class="bg-green padding-tb-xl">
