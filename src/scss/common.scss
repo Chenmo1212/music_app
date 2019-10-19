@@ -1,5 +1,6 @@
-// 文字投影
-@mixin touying {
-  -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent 20%, rgba(0, 0, 0, 0.5));
-  box-reflect: below 0 linear-gradient(transparent 60%, rgba(0, 0, 0, 0.3));
-}
+// 主题色
+$red: #fe5a5b;
+$green: #5de4c3;
+$blue: #44afe7;
+$grey: #999999;
+$black: #091314;

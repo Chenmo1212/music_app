@@ -30,7 +30,8 @@ pre {
 }
 
 a {
-    background-color: transparent
+    background-color: transparent;
+    text-decoration: none;
 }
 
 abbr[title] {
@@ -95,6 +96,13 @@ textarea {
 button,
 input {
     overflow: visible
+}
+
+input {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    outline: none;
 }
 
 button,

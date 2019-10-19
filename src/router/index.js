@@ -37,12 +37,18 @@ export default new Router({
         // 歌单广场
         path: '/home',
         name: 'home',
-        component: navBar
+        component: navBar,
+        // meta: { // meta 路由动画专用，根据大小决定动画类型
+        //     index: 1
+        // },
     }, {
         // 搜索
         path: '/search',
         name: 'search',
-        component: search
+        component: search,
+        // meta: {
+        //     index: 2
+        // },
     }, {
         // 排行榜
         path: '/ranklist',

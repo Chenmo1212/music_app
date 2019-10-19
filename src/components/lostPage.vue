@@ -330,6 +330,7 @@ export default {
 @import "../css/lostPage.css";
 .block {
   top: 10rem;
+  height: 200px;
 }
 .me404 {
   display: inline-block;

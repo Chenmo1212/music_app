@@ -5,14 +5,22 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import store from './store/store'
-import MintUI from 'mint-ui'
 //使用
 Vue.use(Vuex)
-Vue.use(MintUI)
 
-import { TabContainer, TabContainerItem } from 'mint-ui';
+import {
+    TabContainer,
+    TabContainerItem,
+    Swipe,
+    SwipeItem,
+    Search
+} from 'mint-ui';
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Search.name, Search);
+
 
 Vue.config.productionTip = false
 
@@ -21,6 +29,8 @@ new Vue({
     el: '#app',
     router,
     store,
-    components: { App },
+    components: {
+        App
+    },
     template: '<App/>'
 })

@@ -26,6 +26,22 @@
     position: fixed;
 }
 
+.lh-df {
+    line-height: 2rem;
+}
+
+.lh-lg {
+    line-height: 3rem;
+}
+
+.lh-xl {
+    line-height: 4rem;
+}
+
+.border {
+    border: 1px solid #d2d2d2;
+}
+
 
 /* ==================
           文本
@@ -290,6 +306,10 @@
 /* ==================
         内外边距
  ==================== */
+
+.margin-auto {
+    margin: 0 auto;
+}
 
 .margin-0 {
     margin: 0;
@@ -702,8 +722,12 @@
         圆角
  ==================== */
 
-.round {
+.radius {
     border-radius: 5px;
+}
+
+.radius-5 {
+    border-radius: 50%;
 }
 
 
@@ -830,3 +854,6 @@
     -ms-animation-name: fadeOut;
     animation-name: fadeOut;
 }
+
+
+/* 路由动画 */

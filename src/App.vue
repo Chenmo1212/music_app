@@ -41,7 +41,7 @@ export default {
     ...mapState(["dialogToastContain"])
   },
   methods: {
-    ...mapActions(["setDialogToastContain"]),
+    ...mapActions(["setDialogToastContain", "setTransitionName"]),
 
     // toast
     showToast() {
@@ -89,7 +89,6 @@ export default {
           this.bgColorGreen = true;
           break;
       }
-      console.log(this.headerShow);
     }
   },
   created() {
@@ -102,7 +101,13 @@ export default {
       this.showToast();
     },
     $route(to, from) {
+      // console.log(to.meta.index, from.meta.index);
       this.showHeader(to.name);
+      // if (to.meta.index > from.meta.index) {
+      //   this.setTransitionName(true);
+      // } else {
+      //   this.setTransitionName(false);
+      // }
     }
   }
 };
@@ -152,21 +157,6 @@ html {
     padding: 0.5rem 1rem;
     max-width: 8rem;
     font-size: 0.8rem;
-  }
-}
-
-.navBar {
-  line-height: 3rem;
-  font-size: 0.7rem;
-  .menu1,
-  .menu2,
-  .icon {
-    width: 25%;
-  }
-  .checked {
-    font-size: 0.8rem;
-    color: $black;
-    font-weight: 700;
   }
 }
 </style>
