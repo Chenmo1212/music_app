@@ -12,19 +12,17 @@
       >歌单广场</div>
 
       <!-- 路由跳转 -->
-      <transition :name="transitionName">
-        <keep-alive include="home">
-          <router-link class="fl h-10 search text-gray relative" :to="{name: 'search'}">
-            <img src="../../assets/search.png" alt="搜索" class="icon absolute" />
-          </router-link>
-        </keep-alive>
-      </transition>
+      <router-link class="fl h-10 search text-gray relative" :to="{name: 'search'}">
+        <img src="../../assets/search.png" alt="搜索" class="icon absolute" />
+      </router-link>
 
       <!-- Todo: 我的资料 -->
-      <div class="fl h-10 avatar lh-xl ">
-        <img :src="imgUrl" alt="搜索" class="icon inline-block shadow radius-5  h-6" />
+      <div class="fl h-10 avatar lh-xl" @click="mine">
+        <img :src="imgUrl" alt="搜索" class="icon inline-block shadow radius-5 h-6" />
       </div>
     </div>
+
+    <!-- tab container -->
     <div class="page-tab-container">
       <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
         <mt-tab-container-item id="tab-container1" class="bg-green padding-tb-xl">
@@ -54,7 +52,7 @@ export default {
   data() {
     return {
       active: "tab-container1",
-      imgUrl: require('../../assets/avatar.jpg'),
+      imgUrl: require("../../assets/avatar.jpg")
     };
   },
   // 声明子组件
@@ -64,11 +62,14 @@ export default {
     home
   },
   computed: {
-    ...mapState(["dialogToastContain","transitionName"])
+    ...mapState(["dialogToastContain"])
   },
   methods: {
-    ...mapActions(["setDialogToastContain", "setTransitionName"])
-  },
+    ...mapActions(["setDialogToastContain"]),
+    mine() {
+      this.setDialogToastContain("开发狮有点懒~");
+    }
+  }
   // watch: {
   //   $route(to, from) {
   //     console.log(to.meta.index, from.meta.index);
