@@ -25,7 +25,7 @@
     <!-- tab container -->
     <div class="page-tab-container">
       <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
-        <mt-tab-container-item id="tab-container1" class="bg-green padding-tb-xl">
+        <mt-tab-container-item id="tab-container1" class=" padding-tb-lg">
           <!-- 我的音乐 调用子组件-->
           <mine></mine>
         </mt-tab-container-item>

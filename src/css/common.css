@@ -693,6 +693,12 @@
     box-shadow: 0 3px 5px #eee;
 }
 
+.shadow-lg {
+    -moz-box-shadow: 0 5px 8px #eee;
+    -webkit-box-shadow: 0 5px 8px #eee;
+    box-shadow: 0 5px 8px #eee;
+}
+
 
 /* ==================
         按钮
