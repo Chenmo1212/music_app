@@ -21,6 +21,21 @@
     </div>
     <!-- 路由页面 -->
     <router-view />
+
+    <!-- footer -->
+    <div class="footer fixed bottom-0 h-lg w-10 shadow-top-lg" v-if="showFooter">
+      <div class="img h-lg w-lg absolute shadow-lg bg-green radius"></div>
+      <div class="main flex h-lg">
+        <div class="left w-6 inline-block">
+          <div class="title text-df text-black text-bold">七里香</div>
+          <div class="singer text-xs text-gray">周杰伦</div>
+        </div>
+        <div class="right w-3 inline-block flex padding-right-sm lh-lg">
+          <div class="play h-sm w-sm"></div>
+          <div class="menu h-sm w-sm"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -34,7 +49,8 @@ export default {
       toastText: "",
       headerShow: false,
       headerTitle: "我是标题",
-      bgColorGreen: false
+      bgColorGreen: false,
+      showFooter: true,
     };
   },
   computed: {
@@ -67,7 +83,7 @@ export default {
       }
     },
     // 是否显示header
-    showHeader(name) {
+    ifShowHeader(name) {
       switch (name) {
         case "home":
         case "login":
@@ -89,11 +105,22 @@ export default {
           this.bgColorGreen = true;
           break;
       }
+    },
+    ifShowFooter(name){
+      console.log(name);
+      if(name === "login") this.showFooter = false;
+      if(name === "register") this.showFooter = false;
+      if(name === "player") this.showFooter = false;
+      if(name === "search") this.showFooter = false;
+      if(name === "ranklist") this.showFooter = false;
+      if(name === "songlist") this.showFooter = false;
     }
   },
   created() {
     // 是否显示header
-    this.showHeader(this.$route.name);
+    this.ifShowHeader(this.$route.name);
+    this.ifShowHeader(this.$route.name);
+    this.ifShowFooter(this.$route.name);
   },
   watch: {
     // 监听dialog-Toast内容变化
@@ -102,7 +129,8 @@ export default {
     },
     $route(to, from) {
       // console.log(to.meta.index, from.meta.index);
-      this.showHeader(to.name);
+      this.ifShowHeader(to.name);
+      this.ifShowFooter(to.name);
       // if (to.meta.index > from.meta.index) {
       //   this.setTransitionName(true);
       // } else {
@@ -157,6 +185,37 @@ html {
     padding: 0.5rem 1rem;
     max-width: 8rem;
     font-size: 0.8rem;
+  }
+}
+.footer {
+  .img {
+    left: 1rem;
+    bottom: 1rem;
+    background: url(assets/songs.jpg);
+    background-size: cover;
+  }
+  .main{
+    padding-left: 4.8rem;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      text-align: left;
+      div {
+        margin-bottom: 0.2rem;
+      }
+    }
+    .right {
+      justify-content: space-between;
+      align-items: center;
+      .play {
+        background: url(assets/play_fill0.png);
+        background-size: cover;
+      }
+      .menu {
+        background: url(assets/sort_light.png);
+        background-size: cover;
+      }
+    }
   }
 }
 </style>

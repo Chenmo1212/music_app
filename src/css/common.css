@@ -26,6 +26,22 @@
     position: fixed;
 }
 
+.bottom-0 {
+    bottom: 0;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.right-0 {
+    right: 0;
+}
+
 .lh-df {
     line-height: 2rem;
 }
@@ -77,6 +93,10 @@
 
 
 /* 注释类 */
+
+.text-xs {
+    font-size: 0.6rem !important;
+}
 
 .text-sm {
     font-size: 0.7rem !important;
@@ -688,15 +708,27 @@
  ==================== */
 
 .shadow {
-    -moz-box-shadow: 0 3px 5px #eee;
-    -webkit-box-shadow: 0 3px 5px #eee;
-    box-shadow: 0 3px 5px #eee;
+    -moz-box-shadow: 0 3px 5px #cdcdcd;
+    -webkit-box-shadow: 0 3px 5px #cdcdcd;
+    box-shadow: 0 3px 5px #cdcdcd;
+}
+
+.shadow-top {
+    -moz-box-shadow: 0 -3px 5px #cdcdcd;
+    -webkit-box-shadow: 0 -3px 5px #cdcdcd;
+    box-shadow: 0 -3px 5px #cdcdcd;
 }
 
 .shadow-lg {
-    -moz-box-shadow: 0 5px 8px #eee;
-    -webkit-box-shadow: 0 5px 8px #eee;
-    box-shadow: 0 5px 8px #eee;
+    -moz-box-shadow: 0 5px 8px #cdcdcd;
+    -webkit-box-shadow: 0 5px 8px #cdcdcd;
+    box-shadow: 0 5px 8px #cdcdcd;
+}
+
+.shadow-top-lg {
+    -moz-box-shadow: 0 -5px 8px #cdcdcd;
+    -webkit-box-shadow: 0 -5px 8px #cdcdcd;
+    box-shadow: 0 -5px 8px #cdcdcd;
 }
 
 
@@ -734,6 +766,10 @@
 
 .radius-5 {
     border-radius: 50%;
+}
+
+.topline {
+    border-top: 1px solid #ededed;
 }
 
 

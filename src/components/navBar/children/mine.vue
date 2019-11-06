@@ -32,8 +32,11 @@
     <!-- 我的歌单 -->
     <div class="my-songlist margin-top">
       <div class="header text-df h-lg flex lh-lg">
-        <span class="tit inline-block text-bold">我的歌单</span>
-        <span class="arrow inline-block h-sm w-sm bg-black margin-right-xs"></span>
+        <span class="line left"></span>
+         <div class="flex right w-10">
+          <span class="tit inline-block text-bold padding-left-xs">我的歌单</span>
+          <span class="arrow inline-block h-xs w-xs bg-black margin-right-xs"></span>
+        </div>
       </div>
       <div class="body flex">
         <div class="item bg-Pic1 h-lg w-lg shadow-lg radius"></div>
@@ -43,10 +46,13 @@
       </div>
     </div>
     <!-- 我的收藏 -->
-    <div class="my-favor margin-top">
+    <div class="my-favor margin-top topline">
       <div class="header text-df h-lg flex lh-lg">
-        <span class="tit inline-block text-bold">我的收藏</span>
-        <span class="arrow inline-block h-sm w-sm bg-black margin-right-xs"></span>
+        <span class="line left"></span>
+        <div class="flex right w-10">
+          <span class="tit inline-block text-bold padding-left-xs">我的收藏</span>
+          <span class="arrow inline-block h-xs w-xs bg-black margin-right-xs"></span>
+        </div>
       </div>
       <div class="body flex">
         <div class="item bg-Pic1 h-lg w-lg shadow-lg radius"></div>
@@ -69,6 +75,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../scss/common.scss';
   .header-card {
     background: url(../../../assets/banner1.png) no-repeat;
     background-size: cover;
@@ -120,28 +127,38 @@ export default {
     .header {
       justify-content: space-between;
       align-items: center;
-      .arrow {
-         background: url(../../../assets/right.png) no-repeat;
-         background-size: cover;
+      .left {
+        width: 4px;
+        height: 1rem;
+        background-color: $green;
       }
+      .right {
+        justify-content: space-between;
+        align-items: center;
+        .arrow {
+            background: url(../../../assets/right.png) no-repeat;
+            background-size: cover;
+          }
+      }
+      
     }
     .body {
        justify-content: space-between;
       align-items: center;
       .bg-Pic1 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic1.jpeg) no-repeat;
         background-size: cover;
       }
       .bg-Pic2 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic2.jpeg) no-repeat;
         background-size: cover;
       }
       .bg-Pic3 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic3.jpeg) no-repeat;
         background-size: cover;
       }
       .bg-Pic4 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic4.jpeg) no-repeat;
         background-size: cover;
       }
     }
@@ -151,28 +168,37 @@ export default {
     .header {
       justify-content: space-between;
       align-items: center;
-      .arrow {
+      .left {
+        width: 4px;
+        height: 1rem;
+        background-color: $green;
+      }
+      .right{
+        justify-content: space-between;
+        align-items: center;
+        .arrow {
          background: url(../../../assets/right.png) no-repeat;
          background-size: cover;
+        }
       }
     }
     .body {
-       justify-content: space-between;
+      justify-content: space-between;
       align-items: center;
       .bg-Pic1 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic5.jpeg) no-repeat;
         background-size: cover;
       }
       .bg-Pic2 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic5.jpeg) no-repeat;
         background-size: cover;
       }
       .bg-Pic3 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic5.jpeg) no-repeat;
         background-size: cover;
       }
       .bg-Pic4 {
-        background: url(../../../assets/grass.jpg) no-repeat;
+        background: url(../../../assets/pic5.jpeg) no-repeat;
         background-size: cover;
       }
     }
