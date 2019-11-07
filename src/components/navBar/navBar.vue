@@ -1,13 +1,14 @@
 <template>
   <div>
-    <!-- vue2.0 的限制，对于自定义组件的绑定事件需要加上 .native 修饰符-->
+    <div class="navBar-box fixed top-0 w-10 bg-white">
+      <!-- vue2.0 的限制，对于自定义组件的绑定事件需要加上 .native 修饰符-->
     <div class="navBar text-gray cf h-lg shadow" v-if="this.$route.name === 'home'">
       <div
-        :class="active === 'tab-container1' ? 'fl h-10 menu1 checked' : 'fl h-10 menu1 '"
+        :class="active === 'tab-container1' ? 'fl h-10 menu1 checked text-black' : 'fl h-10 menu1 '"
         @click="active = 'tab-container1'"
       >我的音乐</div>
       <div
-        :class="active === 'tab-container2' ? 'fl h-10 menu2 checked' : 'fl h-10 menu2 '"
+        :class="active === 'tab-container2' ? 'fl h-10 menu2 checked text-black' : 'fl h-10 menu2 '"
         @click="active = 'tab-container2'"
       >歌单广场</div>
 
@@ -20,6 +21,7 @@
       <div class="fl h-10 avatar lh-xl" @click="mine">
         <img :src="imgUrl" alt="搜索" class="icon inline-block shadow radius-5 h-6" />
       </div>
+    </div>
     </div>
 
     <!-- tab container -->
@@ -38,7 +40,7 @@
         </mt-tab-container-item>-->
       </mt-tab-container>
     </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -84,13 +86,11 @@ export default {
 </script>
 
 <style lang="scss">
-// 主题色
-$red: #fe5a5b;
-$green: #5de4c3;
-$blue: #44afe7;
-$grey: #999999;
-$black: #091314;
+html::-webkit-scrollbar {display:none}
 
+.navBar-box {
+  z-index: 9999;
+  max-width: 450px;
 .navBar {
   line-height: 3rem;
   font-size: 0.7rem;
@@ -113,9 +113,12 @@ $black: #091314;
   }
   .checked {
     font-size: 0.8rem;
-    color: $black;
     font-weight: 700;
   }
+}
+}
+.page-tab-container {
+  padding-top: 3rem;
 }
 
 .child-view {

@@ -772,6 +772,10 @@
     border-top: 1px solid #ededed;
 }
 
+.underline {
+    border-bottom: 1px solid #ededed;
+}
+
 
 /* ==================
         卡片

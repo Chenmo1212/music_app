@@ -4,13 +4,15 @@
     <div class="toastBox block text-white">
       <div class="toast inline-block a-fadeInUp" v-show="toastShow" id="toast">{{toastText}}</div>
     </div>
+
+    <!-- TODO: 单页 -->
     <!-- header -->
     <div
       class="header h-lg shadow text-sm"
       :class=" bgColorGreen ? 'bg-green': 'bg-white'"
       v-if="headerShow"
     >
-      <div class="navBar cf h-10">
+      <div class="navBar cf h-10 fixed top-0">
         <div class="left h-lg fl w-2">返回</div>
         <div
           class="main h-lg fl w-6 text-lg"
@@ -22,8 +24,9 @@
     <!-- 路由页面 -->
     <router-view />
 
+    <!-- TODO: 单页 -->
     <!-- footer -->
-    <div class="footer fixed bottom-0 h-lg w-10 shadow-top-lg" v-if="showFooter">
+    <div class="footer bg-white fixed bottom-0 h-lg w-10 shadow-top-lg" v-if="showFooter">
       <div class="img h-lg w-lg absolute shadow-lg bg-green radius"></div>
       <div class="main flex h-lg">
         <div class="left w-6 inline-block">
@@ -188,6 +191,7 @@ html {
   }
 }
 .footer {
+  max-width: 450px;
   .img {
     left: 1rem;
     bottom: 1rem;
