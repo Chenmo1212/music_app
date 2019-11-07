@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="body">
-        <div class="lists" v-for="(value) in lists">
+        <div class="lists" v-for="(value,index) in lists" :key="index">
           <div class="item w-10 h-xl flex">
             <div class="left bg-red w-lg h-lg radius shadow-lg">
               <img :src="value.imgUrl" alt="" class="h-10 w-10 radius">
