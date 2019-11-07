@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="body">
-        <div class="lists" v-for="(value, index) in lists">
+        <div class="lists" v-for="(value) in lists">
           <div class="item w-10 h-xl flex">
             <div class="left bg-red w-lg h-lg radius shadow-lg">
               <img :src="value.imgUrl" alt="" class="h-10 w-10 radius">
@@ -161,7 +161,6 @@ export default {
         .item {
           justify-content: space-between;
           align-items: center;
-          .left {}
           .right {
             padding-left: 10px;
             .keywords {
