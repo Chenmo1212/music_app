@@ -11,15 +11,15 @@
     </div>
     <!-- navbar -->
     <div class="navbar flex padding-bottom-xs w-10 text-gray text-sm underline">
-      <div class="item margin-auto">
+      <div class="item margin-auto" @click="menuShift(1)">
         <div class="icon icon1 h-sm w-sm margin-xs"></div>
         <div class="tit">推荐</div>
       </div>
-      <div class="item margin-auto">
+      <div class="item margin-auto"  @click="menuShift(2)">
         <div class="icon icon2 h-sm w-sm margin-xs"></div>
         <div class="tit">下载榜</div>
       </div>
-      <div class="item margin-auto">
+      <div class="item margin-auto" @click="menuShift(3)">
         <div class="icon icon3 h-sm w-sm margin-xs"></div>
         <div class="tit">播放榜</div>
       </div>
@@ -88,6 +88,36 @@ export default {
         title: "华语经典",
         keywords: "华语|流行|怀旧",
         desc: "站在光阴的节点，轻抚岁月的痕迹"
+      },{
+        imgUrl: require("../../../assets/pic3.jpeg"),
+        title: "华语经典",
+        keywords: "华语|流行|怀旧",
+        desc: "站在光阴的节点，轻抚岁月的痕迹"
+      },{
+        imgUrl: require("../../../assets/pic3.jpeg"),
+        title: "怀旧的你",
+        keywords: "90后|怀旧",
+        desc: "闲暇细致的90后回忆杀"
+      },{
+        imgUrl: require("../../../assets/pic3.jpeg"),
+        title: "华语经典",
+        keywords: "华语|流行|怀旧",
+        desc: "站在光阴的节点，轻抚岁月的痕迹"
+      },{
+        imgUrl: require("../../../assets/pic3.jpeg"),
+        title: "华语经典",
+        keywords: "华语|流行|怀旧",
+        desc: "站在光阴的节点，轻抚岁月的痕迹"
+      },{
+        imgUrl: require("../../../assets/pic3.jpeg"),
+        title: "怀旧的你",
+        keywords: "90后|怀旧",
+        desc: "闲暇细致的90后回忆杀"
+      },{
+        imgUrl: require("../../../assets/pic3.jpeg"),
+        title: "华语经典",
+        keywords: "华语|流行|怀旧",
+        desc: "站在光阴的节点，轻抚岁月的痕迹"
       },
       ]
     };
@@ -97,6 +127,24 @@ export default {
     // 歌单详情
     toSongList(index) {
       this.setDialogToastContain("跳转歌单" + index);
+    },
+    // 导航切换
+    menuShift(index){ // 1：推荐； 2：下载榜； 3：播放榜
+    switch(index){
+      case 1: {
+        this.setDialogToastContain("跳转到推荐");
+        break;
+      }
+      case 2: {
+        this.setDialogToastContain("跳转到下载榜");
+        break;
+      }
+      case 3: {
+        this.setDialogToastContain("跳转到播放榜");
+        break;
+      }
+    }
+     
     }
   }
 };
@@ -124,6 +172,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     .item {
+      cursor: pointer;
       .icon1 {
         background: url(../../../assets/navbar1.png) center center;
         background-size: 100%;

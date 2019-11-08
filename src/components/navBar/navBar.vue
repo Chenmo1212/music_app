@@ -26,7 +26,7 @@
 
     <!-- tab container -->
     <div class="page-tab-container">
-      <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
+      <mt-tab-container class="page-tabbar-tab-container" v-model="active" :swipeable="swipeable">
         <mt-tab-container-item id="tab-container1" class=" padding-tb-lg">
           <!-- 我的音乐 调用子组件-->
           <mine></mine>
@@ -54,7 +54,8 @@ export default {
   data() {
     return {
       active: "tab-container1",
-      imgUrl: require("../../assets/avatar.jpg")
+      imgUrl: require("../../assets/avatar.jpg"),
+      swipeable: false,
     };
   },
   // 声明子组件
@@ -62,6 +63,16 @@ export default {
     // search,
     mine,
     home
+  },
+  created(){
+    // 定义变量获取屏幕视口宽度
+    var windowWidth = document.body.clientWidth ;
+    var screenWidth = window.screen.width ;
+    // windowWidth < 450 ? this.swipeable = true : this.swipeable = false;
+    // 根据屏幕宽度决定是否允许滑动
+    this.swipeable = (windowWidth < 450);
+    // 如果是ipad，允许滑动
+    if(screenWidth < 1024) this.swipeable = true;
   },
   computed: {
     ...mapState(["dialogToastContain"])

@@ -114,7 +114,6 @@ export default {
       if(name === "login") this.showFooter = false;
       if(name === "register") this.showFooter = false;
       if(name === "player") this.showFooter = false;
-      if(name === "search") this.showFooter = false;
       if(name === "ranklist") this.showFooter = false;
       if(name === "songlist") this.showFooter = false;
     }
