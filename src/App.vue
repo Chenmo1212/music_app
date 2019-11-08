@@ -12,13 +12,19 @@
       :class=" bgColorGreen ? 'bg-green': 'bg-white'"
       v-if="headerShow"
     >
-      <div class="navBar cf h-10 fixed top-0">
-        <div class="left h-lg fl w-2">返回</div>
+      <div class="navBar cf h-10 top-0 w-10 flex">
+        <div class="left w-1 padding-left-xs" @click="back">
+          <div class="icon inline-block">
+            <img class="h-10 w-10" src="./assets/back-white.png" alt="" v-if="bgColorGreen">
+            <img class="h-10 w-10" src="./assets/back.png" alt="" v-if="!bgColorGreen">
+          </div>
+        </div>
         <div
-          class="main h-lg fl w-6 text-lg"
+          class="main w-8 text-lg text-bold"
           :class=" bgColorGreen ? 'text-white': 'text-black'"
         >{{headerTitle}}</div>
-        <div class="right h-lg fl w-2">菜单</div>
+        <div class="right margin-right-xs menu h-sm w-sm" v-if="showMenu"></div>
+        <div class="right h-sm w-sm" v-if="!showMenu"></div>
       </div>
     </div>
     <!-- 路由页面 -->
@@ -26,7 +32,7 @@
 
     <!-- TODO: 单页 -->
     <!-- footer -->
-    <div class="footer bg-white fixed bottom-0 h-lg w-10 shadow-top-lg" v-if="showFooter">
+    <div class="footer bg-white fixed bottom-0 h-lg w-10 shadow-top-lg" v-if="showFooter" @click="toPlayer">
       <div class="img h-lg w-lg absolute shadow-lg bg-green radius"></div>
       <div class="main flex h-lg">
         <div class="left w-6 inline-block">
@@ -54,6 +60,7 @@ export default {
       headerTitle: "我是标题",
       bgColorGreen: false,
       showFooter: true,
+      showMenu: false,
     };
   },
   computed: {
@@ -87,6 +94,7 @@ export default {
     },
     // 是否显示header
     ifShowHeader(name) {
+      // console.log(name);
       switch (name) {
         case "home":
         case "login":
@@ -95,8 +103,13 @@ export default {
           this.headerShow = false;
           break;
         case "ranklist":
+          this.headerShow = true;
+          this.headerTitle = "排行榜";
+          break;
         case "player":
           this.headerShow = true;
+          this.headerTitle = "播放器";
+          this.showMenu = true;
           break;
         case "recommend":
           this.headerShow = true;
@@ -106,16 +119,25 @@ export default {
         case "songlist":
           this.headerShow = true;
           this.bgColorGreen = true;
+          this.headerTitle = "歌单列表";
           break;
+        default: break;
       }
     },
     ifShowFooter(name){
-      console.log(name);
+      // console.log(name);
+      this.showFooter = true;
       if(name === "login") this.showFooter = false;
       if(name === "register") this.showFooter = false;
       if(name === "player") this.showFooter = false;
       if(name === "ranklist") this.showFooter = false;
       if(name === "songlist") this.showFooter = false;
+    },
+    toPlayer(){
+      this.$router.push({name: 'player'});
+    },
+    back(){
+      this.$router.go(-1);
     }
   },
   created() {
@@ -187,6 +209,25 @@ html {
     padding: 0.5rem 1rem;
     max-width: 8rem;
     font-size: 0.8rem;
+  }
+}
+
+.header {
+  .navBar {
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      .icon {
+        height: 1.2rem;
+        width: 1.2rem;
+        background: url(assets/back-white.png);
+        background-size: cover;
+      }
+    }
+    .menu {
+      background: url(assets/menu-green.png);
+      background-size: cover;
+    }
   }
 }
 .footer {

@@ -6,6 +6,7 @@ import navBar from '@/components/navBar/navBar.vue'
 import search from '@/components/navBar/children/search'
 // import mine from '@/components/navBar/children/mine'
 import rankList from '@/components/rankList'
+import recommend from '@/components/recommended'
 import login from '@/components/login'
 import register from '@/components/register'
 import songList from '@/components/songList'
@@ -54,6 +55,11 @@ export default new Router({
         path: '/ranklist',
         name: 'ranklist',
         component: rankList
+    }, {
+        // 推荐
+        path: '/recommend',
+        name: 'recommend',
+        component: recommend
     }, {
         // 歌单详情
         path: '/songlist',
